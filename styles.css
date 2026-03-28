@@ -30,8 +30,6 @@ body {
   padding: 1rem;
 }
 
-/* ─── Card ───────────────────────── */
-
 .card {
   background: linear-gradient(145deg, #1a1a1a, #141414);
   border: 1px solid var(--border);
@@ -44,11 +42,37 @@ body {
     0 20px 60px rgba(0, 0, 0, 0.7);
 }
 
-/* ─── Header ─────────────────────── */
-
 .header {
   text-align: center;
   margin-bottom: 2rem;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--terminal-green);
+  box-shadow: 0 0 8px var(--terminal-green);
+  will-change: opacity;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .avatar {
@@ -76,4 +100,36 @@ h1 {
 .role {
   font-size: 1.1rem;
   color: var(--accent);
+}
+
+/* Sections */
+
+.section {
+  margin-top: 1.5rem;
+}
+
+.section-title {
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+/* Skills */
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.skill {
+  background: #0d0d0d;
+  border: 1px solid var(--border);
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  text-align: center;
+  color: var(--text);
 }
