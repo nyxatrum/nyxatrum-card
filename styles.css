@@ -133,3 +133,55 @@ h1 {
   text-align: center;
   color: var(--text);
 }
+
+/* Links */
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  text-decoration: none;
+  color: var(--text);
+
+  padding: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #0d0d0d;
+
+  font-size: 1rem;
+
+  transition: border-color 0.2s ease,
+              color 0.2s ease,
+              transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.links a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+.links a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.link-full {
+  grid-column: 1 / -1;
+}
+
+.icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
