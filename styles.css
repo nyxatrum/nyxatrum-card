@@ -207,3 +207,22 @@ h1 {
     opacity: 0;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+
+  .dot,
+  .cursor-inline {
+    animation: none;
+  }
+
+  .links a {
+    transition: none;
+  }
+}
+
+.links a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-color: var(--accent);
+  color: var(--accent);
+}
