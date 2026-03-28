@@ -32,24 +32,17 @@
         <div class="dot" aria-hidden="true"></div>
         <span>online · uptime 99.99%</span>
       </div>
-
-      <div class="avatar">
-        <img src="./avatar_yl.webp" alt="Nikolaos Dimitriou">
+      <div class="avatar" aria-hidden="true">
+        <img src="./avatar_yl.webp" alt="Nikolaos Dimitriou" loading="lazy" decoding="async">
       </div>
-
       <h1 class="typing" aria-label="Nikolaos Dimitriou">
-        <span class="text" aria-hidden="true"></span>
-        <span class="cursor-inline" aria-hidden="true">_</span>
+        <span class="text" aria-hidden="true"></span><span class="cursor-inline" aria-hidden="true">_</span>
       </h1>
-
-      <p class="role">
-        Linux Systems &amp; Automation | DevOps | IoT / Edge Systems
-      </p>
+      <p class="role">Linux Systems &amp; Automation | DevOps | IoT / Edge Systems</p>
     </header>
 
     <section class="section" aria-labelledby="skills-title">
       <div class="section-title terminal-title" id="skills-title">$ core_stack</div>
-
       <div class="skills" role="list">
         <div class="skill" role="listitem">Linux</div>
         <div class="skill" role="listitem">Automation</div>
@@ -64,20 +57,34 @@
 
     <section class="section" aria-labelledby="links-title">
       <div class="section-title terminal-title" id="links-title">$ links</div>
-
       <nav class="links" aria-label="Social links">
         <a href="https://www.linkedin.com/in/ngdimitriou" target="_blank" rel="noopener noreferrer"
-           aria-label="LinkedIn profile (opens in new tab)">
+          aria-label="LinkedIn profile (opens in new tab)">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path
+                d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1s2.49 1.12 2.49 2.5zM.5 8h4V24h-4zM8.5 8h3.6v2.2h.05c.5-.95 1.7-2.2 3.5-2.2 3.75 0 4.45 2.45 4.45 5.65V24h-4v-8.5c0-2-.03-4.6-2.8-4.6-2.8 0-3.2 2.2-3.2 4.45V24h-4z" />
+            </svg>
+          </span>
           <span>LinkedIn</span>
         </a>
-
         <a href="https://github.com/nyxatrum" target="_blank" rel="noopener noreferrer"
-           aria-label="GitHub profile (opens in new tab)">
+          aria-label="GitHub profile (opens in new tab)">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path
+                d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2c-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.74 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.52-2.55-.29-5.23-1.27-5.23-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.96 10.96 0 012.87-.39c.97 0 1.94.13 2.87.39 2.19-1.48 3.15-1.17 3.15-1.17.62 1.57.23 2.73.11 3.02.73.8 1.18 1.82 1.18 3.07 0 4.39-2.69 5.36-5.25 5.65.41.35.78 1.04.78 2.1v3.12c0 .3.21.65.79.54C20.71 21.39 24 17.08 24 12c0-6.35-5.15-11.5-12-11.5z" />
+            </svg>
+          </span>
           <span>GitHub</span>
         </a>
-
-        <a href="mailto:ngdimitriou@proton.me" class="link-full"
-           aria-label="Send email">
+        <a href="mailto:ngdimitriou@proton.me" aria-label="Send email" class="link-full">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+          </span>
           <span>Email</span>
         </a>
       </nav>
@@ -93,16 +100,13 @@
     (function () {
       const el = document.querySelector('.typing .text');
       const name = 'Nikolaos Dimitriou';
-
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (prefersReduced) {
         el.textContent = name;
         return;
       }
-
       let i = 0;
       const speed = 80;
-
       function type() {
         if (i <= name.length) {
           el.textContent = name.slice(0, i);
@@ -110,7 +114,6 @@
           setTimeout(type, speed);
         }
       }
-
       setTimeout(type, 300);
     })();
   </script>

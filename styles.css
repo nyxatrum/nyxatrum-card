@@ -67,9 +67,12 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.5;
   }
+
   50% {
     opacity: 1;
   }
@@ -95,6 +98,7 @@ body {
 h1 {
   font-size: 1.9rem;
   margin-bottom: 0.4rem;
+  min-height: 2.4rem;
 }
 
 .role {
@@ -102,7 +106,6 @@ h1 {
   color: var(--accent);
 }
 
-/* Sections */
 
 .section {
   margin-top: 1.5rem;
@@ -116,7 +119,6 @@ h1 {
   text-transform: uppercase;
 }
 
-/* Skills */
 
 .skills {
   display: grid;
@@ -134,8 +136,6 @@ h1 {
   color: var(--text);
 }
 
-/* Links */
-
 .links {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -147,21 +147,15 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 10px;
-
   text-decoration: none;
   color: var(--text);
-
   padding: 0.9rem;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: #0d0d0d;
-
   font-size: 1rem;
-
-  transition: border-color 0.2s ease,
-              color 0.2s ease,
-              transform 0.2s ease,
-              box-shadow 0.2s ease;
+  will-change: transform;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .links a:hover {
@@ -174,6 +168,8 @@ h1 {
 .links a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .link-full {
@@ -184,6 +180,7 @@ h1 {
   width: 18px;
   height: 18px;
   fill: currentColor;
+  flex-shrink: 0;
 }
 
 .footer {
@@ -199,6 +196,7 @@ h1 {
 
 .cursor-inline {
   margin-left: 2px;
+  will-change: opacity;
   animation: blink 1s steps(1) infinite;
 }
 
@@ -209,20 +207,23 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   .dot,
   .cursor-inline {
     animation: none;
   }
-
   .links a {
     transition: none;
   }
 }
 
-.links a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-color: var(--accent);
-  color: var(--accent);
+@media (min-width: 400px) {
+  .skills {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 640px) {
+  .skills {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
