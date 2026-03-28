@@ -192,3 +192,18 @@ h1 {
   font-size: 0.9rem;
   color: var(--muted);
 }
+
+.typing .text {
+  display: inline;
+}
+
+.cursor-inline {
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

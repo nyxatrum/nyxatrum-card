@@ -37,7 +37,10 @@
         <img src="./avatar_yl.webp" alt="Nikolaos Dimitriou">
       </div>
 
-      <h1>Nikolaos Dimitriou</h1>
+      <h1 class="typing" aria-label="Nikolaos Dimitriou">
+        <span class="text"></span>
+        <span class="cursor-inline">_</span>
+      </h1>
 
       <p class="role">
         Linux Systems &amp; Automation | DevOps | IoT / Edge Systems
@@ -78,5 +81,32 @@
     </footer>
 
   </main>
+
+  <script>
+    (function () {
+      const el = document.querySelector('.typing .text');
+      const name = 'Nikolaos Dimitriou';
+
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) {
+        el.textContent = name;
+        return;
+      }
+
+      let i = 0;
+      const speed = 80;
+
+      function type() {
+        if (i <= name.length) {
+          el.textContent = name.slice(0, i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+
+      setTimeout(type, 300);
+    })();
+  </script>
+
 </body>
 </html>
